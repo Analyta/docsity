@@ -152,11 +152,11 @@ const Notifications: React.FC = () => (
   </div>
 );
 
-const Settings: React.FC = () => (
-  <div>
-    <h2 className="text-xl font-bold text-gray-900 mb-6">Account Settings</h2>
-    <p className="text-gray-500">Manage your account settings and preferences.</p>
-  </div>
-);
+// const Settings: React.FC = () => (
+//   <div>
+//     <h2 className="text-xl font-bold text-gray-900 mb-6">Account Settings</h2>
+//     <p className="text-gray-500">Manage your account settings and preferences.</p>
+//   </div>
+// );
 
 export default UserProfile;
