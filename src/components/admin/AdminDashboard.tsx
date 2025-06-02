@@ -2,10 +2,10 @@ import React from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Users, FileText, BookOpen, Settings, BarChart } from 'lucide-react';
 import AdminUsers from './AdminUsers';
-import AdminDocuments from './AdminDocuments';
-import AdminCategories from './AdminCategories';
-import AdminSettings from './AdminSettings';
-import AdminAnalytics from './AdminAnalytics';
+// import AdminDocuments from './AdminDocuments';
+// import AdminCategories from './AdminCategories';
+// import AdminSettings from './AdminSettings';
+// import AdminAnalytics from './AdminAnalytics';
 
 const AdminDashboard: React.FC = () => {
   const location = useLocation();
