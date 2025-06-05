@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import HomePage from './components/home/HomePage';
 import AdminDashboard from './components/admin/AdminDashboard';
 import UserProfile from './components/profile/UserProfile';
+import BlogPage from './components/blog/BlogPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/admin/*" element={<AdminDashboard />} />
             <Route path="/profile/*" element={<UserProfile />} />
+            <Route path="/blog" element={<BlogPage />} />
           </Routes>
         </div>
         <Footer />
@@ -24,4 +26,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

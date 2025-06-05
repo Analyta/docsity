@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Search, Bell, ChevronDown, X } from 'lucide-react';
 import Button from '../common/Button';
 import SearchBar from '../common/SearchBar';
@@ -20,7 +21,6 @@ const Header: React.FC = () => {
 
   const handleSearch = (query: string) => {
     console.log('Searching for:', query);
-    // In a real app, we would navigate to search results page
   };
 
   return (
@@ -29,14 +29,17 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <BookIcon className="h-8 w-8 text-blue-600" />
               <span className="ml-2 text-xl font-bold text-gray-900">Docsity</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
+            <Link to="/blog" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+              Blog
+            </Link>
             <div className="relative group">
               <button className="flex items-center text-gray-700 hover:text-blue-600 px-3 py-2">
                 Subjects <ChevronDown className="ml-1 h-4 w-4" />
@@ -111,6 +114,12 @@ const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
+            <Link
+              to="/blog"
+              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md"
+            >
+              Blog
+            </Link>
             <a href="#" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">
               Subjects
             </a>
