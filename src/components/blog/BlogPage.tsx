@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BlogList from './BlogList';
+import CreatePost from './CreatePost';
 import { Post, Author, Topic } from '../../types/blog';
 
 const mockAuthors: { [key: string]: Author } = {
@@ -58,6 +59,30 @@ const BlogPage: React.FC = () => {
     // For now using mock data
   }, []);
 
+  const handleCreatePost = async (postData: { 
+    title: string; 
+    content: string; 
+    topic: string; 
+    image?: File 
+  }) => {
+    // Here we would send the post to Supabase
+    // For now, just add it to the local state
+    const newPost: Post = {
+      id: String(Date.now()),
+      title: postData.title,
+      content: postData.content,
+      topic: postData.topic,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      author_id: '1', // Using mock author
+      likes_count: 0,
+      comments_count: 0,
+      is_bookmarked: false
+    };
+
+    setPosts([newPost, ...posts]);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -65,6 +90,8 @@ const BlogPage: React.FC = () => {
           <h1 className="text-3xl font-bold text-gray-900">Blog Forum</h1>
           <p className="mt-2 text-gray-600">Join the discussion and share your knowledge</p>
         </div>
+
+        <CreatePost topics={mockTopics} onCreatePost={handleCreatePost} />
 
         {isLoading ? (
           <div className="flex justify-center items-center h-64">

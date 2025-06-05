@@ -32,6 +32,9 @@ const BlogPost: React.FC<BlogPostProps> = ({
             {formatDistanceToNow(new Date(post.created_at), { addSuffix: true })}
           </p>
         </div>
+        <span className="ml-auto px-3 py-1 bg-gray-100 rounded-full text-sm">
+          {post.topic}
+        </span>
       </div>
 
       <h2 className="text-xl font-semibold text-gray-900 mb-2">{post.title}</h2>
@@ -74,10 +77,6 @@ const BlogPost: React.FC<BlogPostProps> = ({
             <Share2 className="w-5 h-5" />
           </button>
         </div>
-
-        <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">
-          {post.topic}
-        </span>
       </div>
     </article>
   );
